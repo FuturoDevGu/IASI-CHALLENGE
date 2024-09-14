@@ -14,25 +14,23 @@ import java.util.Date;
 @AllArgsConstructor
 public class Equipamento {
 
+    @Column(name = "NOME_EQUIPAMENTO")
+    private String nomeEquipamento;
+    @Column(name = "TIPO_EQUIPAMENTO")
+    private String tipoEquipamento;
+    @Column(name = "LOCALIZACAO_EQUIPAMENTO")
+    private String localizacaoEquipamento;
+    @Column(name = "DATA_INSTALACAO_EQUIPAMENTO")
+    private Date dataInstalacaoEquipamento;
+    @Column(name = "ESTADO_EQUIPAMENTO")
+    private String estadoEquipamento;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_EQUIPAMENTO")
     private long idEquipamento;
 
-    @Column(name = "NOME_EQUIPAMENTO")
-    private String nomeEquipamento;
-
-    @Column(name = "TIPO_EQUIPAMENTO")
-    private String tipoEquipamento;
-
-    @Column(name = "LOCALIZACAO_EQUIPAMENTO")
-    private String localizacaoEquipamento;
-
-    @Column(name = "DATA_INSTALACAO_EQUIPAMENTO")
-    private Date dataInstalacaoEquipamento;
-
-    @Column(name = "ESTADO_EQUIPAMENTO")
-    private String estadoEquipamento;
+    @Transient
+    private Equipamento equipamento;
 
      // preciso analisar o id_empresa, pois não tem esse
      // @ManyToOne

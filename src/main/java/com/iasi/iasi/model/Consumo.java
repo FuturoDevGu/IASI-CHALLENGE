@@ -14,10 +14,6 @@ import java.util.Date;
 @AllArgsConstructor
 public class Consumo {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_CONSUMO")
-    private long idConsumo;
     @Column(name = "DATA_CONSUMO")
     private Date dataConsumo;
     @Column(name = "QUANTIDADE_CONSUMO")
@@ -26,11 +22,14 @@ public class Consumo {
     private String tipoEnergiaConsumo;
     @Column(name = "EMISSAO_GAS_CONSUMO")
     private Float emissaoGasConsumo;
-    @Column(name = "ID_EQUIPAMENTO")
-    private long idEquipamento;
-
     @Transient
     private Equipamento equipamento;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_CONSUMO")
+    private long idConsumo;
+    @Column(name = "ID_EQUIPAMENTO")
+    private long idEquipamento;
 
     public Consumo(Equipamento equipamento, Date dataConsumo, Float quantidadeConsumo, String tipoEnergiaConsumo, Float emissaoGasConsumo) {
         this.equipamento = equipamento;

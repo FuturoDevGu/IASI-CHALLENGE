@@ -1,6 +1,5 @@
 package com.iasi.iasi.repository;
 
-import com.iasi.iasi.model.Empresa;
 import com.iasi.iasi.model.Equipamento;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
